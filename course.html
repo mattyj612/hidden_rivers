@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="fixed-background"></div>
+    
+    <div class="back-arrow-container">
+        <a href="index.html" class="back-arrow" aria-label="Back to homepage">←</a>
+    </div>
+    
     <div class="sticky-header">
         <div class="logo-container">
             <img src="images/logo.png" alt="Hidden Rivers Logo" class="logo">
@@ -128,4 +134,20 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const syllabusContainer = document.querySelector('.syllabus-container');
+        const backArrow = document.querySelector('.back-arrow-container');
+        const syllabusTop = syllabusContainer.offsetTop;
+
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition >= syllabusTop) {
+                backArrow.style.transform = `translateY(-${scrollPosition - syllabusTop}px)`;
+            } else {
+                backArrow.style.transform = 'translateY(0)';
+            }
+        });
+    });
+</script>
 </html> 
