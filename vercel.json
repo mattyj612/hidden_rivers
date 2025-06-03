@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/course", "destination": "/course.html" },
+    { "source": "/background_essay", "destination": "/background_essay.html" },
+    { "source": "/discussion_norms", "destination": "/discussion_norms.html" }
+  ],
+  "cleanUrls": true
+} 

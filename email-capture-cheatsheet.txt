@@ -1,0 +1,55 @@
+==============================
+Hidden Rivers Email Capture: Full Stack Cheat Sheet
+==============================
+
+How It Works:
+-------------
+- Frontend (Vercel + GitHub):
+  * Website code is on GitHub, deployed automatically by Vercel.
+  * Email form sends POST requests to https://api.hiddenrivers.ca/subscribe.
+
+- Backend (AWS EC2 + Node.js + PM2 + NGINX):
+  * EC2 runs Node.js app (server.js) managed by PM2.
+  * NGINX proxies HTTPS (443) to Node.js on port 3000.
+  * Node.js saves emails to emails.txt and handles CORS.
+  * SSL (Let's Encrypt) provides HTTPS via NGINX.
+
+- Ports:
+  * 22: SSH (restricted to your IP)
+  * 80: HTTP (open to all, for redirects/SSL verification)
+  * 443: HTTPS (open to all, for secure web traffic)
+  * 3000: Node.js app (open only to localhost)
+
+Key Commands:
+-------------
+# SSH into EC2
+ssh -i ~/Downloads/capture-email.pem ec2-user@44.211.251.34
+
+# Download emails.txt to your local machine
+scp -i ~/Downloads/capture-email.pem ec2-user@44.211.251.34:~/hidden_rivers/emails.txt .
+
+# Pull latest backend code from GitHub (on EC2)
+cd ~/hidden_rivers
+git pull origin main
+
+# Restart Node.js app with PM2 (on EC2)
+pm2 stop all
+PORT=3000 pm2 start server.js --name server
+
+# Check PM2 process status (on EC2)
+pm2 list
+
+# View Node.js logs (on EC2)
+pm2 logs server
+
+# Check NGINX status (on EC2)
+sudo systemctl status nginx
+
+# Reload NGINX after config changes (on EC2)
+sudo nginx -t
+sudo systemctl reload nginx
+
+# (Frontend updates are automatic via Vercel after GitHub push)
+
+------------------------------
+For troubleshooting, updating SSL, or more help, just ask! 
