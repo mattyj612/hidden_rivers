@@ -103,7 +103,7 @@
       }
   
       try {
-        const response = await fetch('/subscribe', {
+        const response = await fetch('http://44.211.251.34/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: email })
