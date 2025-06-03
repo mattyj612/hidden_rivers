@@ -1,0 +1,24 @@
+{
+  "name": "hidden_rivers_website",
+  "version": "1.0.0",
+  "description": "Hidden Rivers is a network of educational programs whose goal is to promote civic accountability, rootedness, and community through the shared study of history.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattyj612/hidden_rivers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattyj612/hidden_rivers/issues"
+  },
+  "homepage": "https://github.com/mattyj612/hidden_rivers#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}

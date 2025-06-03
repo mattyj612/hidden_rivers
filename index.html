@@ -17,8 +17,10 @@
   </div>
   <div class="mission-section">
     <div class="mission">
-      <span class="mission-main">Hidden Rivers creates walking tours and courses that help you feel rooted in Toronto.</span>
-      <span class="mission-secondary">We explore Toronto's infrastructure, history, and urban ecology to feel more connected to the place we call home.</span>
+      <!-- <span class="mission-main">Hidden Rivers creates walking tours and courses that help you feel rooted in Toronto.</span>
+      <span class="mission-secondary">We explore Toronto's infrastructure, history, and urban ecology to feel more connected to the place we call home.</span> -->
+      <span class="mission-main">Hidden Rivers creates walking tours and courses designed to deepen your connection to Toronto.</span>
+      <span class="mission-secondary">We explore Toronto's infrastructure, history, and urban ecology to feel more rooted in the place we call home.</span>
     </div>
   </div>
   <div class="offerings-section">
@@ -39,14 +41,15 @@
     <div class="email-capture-label">
       Enter your email to stay up-to-date with Hidden Rivers
     </div>
-    <form class="email-capture-form" id="email-capture-form">
-        <input type="email" class="email-capture-input" name="email" id="email-input" required placeholder="Enter your email">
-        <button type="submit" class="email-capture-button">Subscribe</button>
-      </form>
     <!-- <form class="email-capture-form" id="email-capture-form">
-      <input type="email" class="email-capture-input" required id="email-capture-input">
-      <button type="submit" class="email-capture-button">Subscribe</button> -->
+      <input type="email" class="email-capture-input" name="email" id="email-input" required placeholder="Enter your email">
+      <button type="submit" class="email-capture-button">Subscribe</button>
+    </form> -->
+    <form id="email-form" class="email-capture-form" novalidate>
+      <input type="text" id="email-input" name="email" class="email-capture-input">
+      <button type="submit" class="email-capture-button">Subscribe</button>
     </form>
+    <p id="email-message" class="email-message"></p>
   </div>
   <footer class="footer">
     <div class="footer-socials">
@@ -62,28 +65,57 @@
     </div>
     <div class="footer-email"><a href="mailto:info@hiddenrivers.ca">info@hiddenrivers.ca</a></div>
   </footer>
-
- <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxDIrAuJvludVHkzjVCvZ9VW8FnmcTm0pv6Tg3gmza4UPjFncQaKmk1jnVL8ictDbgR7w/exec';
-  
-    document.getElementById('email-capture-form').addEventListener('submit', e => {
+  <script>
+    document.getElementById('email-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const email = document.getElementById('email-capture-input').value;
   
-      fetch(scriptURL, {
-        method: 'POST',
-        body: new URLSearchParams({ email: email })
-      })
-      .then(response => response.text())
-      .then(result => {
-        alert("Thanks for subscribing!");
-        document.getElementById('email-capture-input').value = '';
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-      });
+      const email = document.getElementById('email-input').value;
+      const messageBox = document.getElementById('email-message');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+      if (!emailPattern.test(email)) {
+        messageBox.textContent = 'Please enter a valid email address.';
+        messageBox.classList.add('error');
+        messageBox.style.opacity = 1;
+        setTimeout(() => {
+          messageBox.style.opacity = 0;
+          setTimeout(() => { messageBox.textContent = ''; messageBox.style.opacity = 1; }, 500);
+        }, 4000);
+        return;
+      } else {
+        messageBox.textContent = '';
+        messageBox.classList.remove('error');
+      }
+  
+      try {
+        const response = await fetch('/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+  
+        const message = await response.text();
+        messageBox.textContent = message;
+        messageBox.classList.remove('error');
+        document.getElementById('email-input').value = '';
+    
+        // Show message, then fade out after 4 seconds
+        messageBox.style.opacity = 1;
+        setTimeout(() => {
+          messageBox.style.opacity = 0;
+          setTimeout(() => { messageBox.textContent = ''; messageBox.style.opacity = 1; }, 500);
+        }, 4000);
+  
+      } catch (err) {
+        messageBox.textContent = 'Something went wrong.';
+        messageBox.classList.add('error');
+        messageBox.style.opacity = 1;
+        setTimeout(() => {
+          messageBox.style.opacity = 0;
+          setTimeout(() => { messageBox.textContent = ''; messageBox.style.opacity = 1; }, 500);
+        }, 4000);
+      }
     });
-  </script>
-  
+  </script>  
 </body>
 </html>

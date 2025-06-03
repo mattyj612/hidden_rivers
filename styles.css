@@ -163,7 +163,7 @@ body {
 }
 .email-capture-section {
   background: var(--blue-light);
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 0 0rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,13 +183,14 @@ body {
 }
 .email-capture-input {
   flex: 1;
-  padding: 0.5rem 1.2rem;
-  font-size: 1.1rem;
+  padding: 0.6rem 1.2rem 0.6rem 0.6rem;
+  font-size: 1rem;
   border: 2px solid #111;
   border-radius: 0;
   outline: none;
-  font-family: 'Avenir', sans-serif;
+  font-family: 'Avenir Light', sans-serif;
   margin-right: -1px;
+  color: var(--green-dark);
 }
 .email-capture-button {
   background: var(--green-dark);
@@ -293,4 +294,32 @@ body {
 .footer-email a {
   color: #fff;
   text-decoration: underline;
+}
+
+.email-response-message {
+  margin-top: 1.1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: opacity 0.5s;
+  min-height: 1.5em;
+}
+
+.email-validation-message {
+  margin-top: 1.1rem;
+  color: #b30000;
+  font-size: 1rem;
+  text-align: center;
+  transition: opacity 0.5s;
+}
+
+.email-message {
+  min-height: 1.5em;
+  margin-top: 1.1rem;
+  font-size: 1rem;
+  text-align: center;
+  transition: opacity 0.5s, color 0.2s;
+  color: #113B20;
+}
+.email-message.error {
+  color: #b30000;
 } 
