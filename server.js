@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,6 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve your existing HTML + assets
 app.use(express.static(__dirname));
+
+// Add CORS support
+app.use(cors({
+  origin: 'https://www.hiddenrivers.ca'
+}));
 
 // Handle the form POST
 app.post('/subscribe', (req, res) => {
