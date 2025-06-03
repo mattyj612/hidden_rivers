@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Load Speed Test</title>
+  <style>
+    body { font-family: sans-serif; }
+    .container { display: flex; gap: 40px; margin-top: 40px; }
+    .img-block { text-align: center; }
+    img { max-width: 200px; display: block; margin: 0 auto 10px; }
+    .time { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Image Load Speed Test</h1>
+  <div class="container">
+    <div class="img-block">
+      <div>CloudFront</div>
+      <img id="cloudfront-img" src="https://d2fl4nf5ksitmq.cloudfront.net/images/logo.png" alt="CloudFront Logo">
+      <div>Load time: <span class="time" id="cloudfront-time">...</span> ms</div>
+    </div>
+    <div class="img-block">
+      <div>Local</div>
+      <img id="local-img" src="images/logo.png" alt="Local Logo">
+      <div>Load time: <span class="time" id="local-time">...</span> ms</div>
+    </div>
+  </div>
+  <script>
+    function measureLoadTime(imgId, timeId) {
+      const img = document.getElementById(imgId);
+      const start = performance.now();
+      img.onload = () => {
+        const end = performance.now();
+        document.getElementById(timeId).textContent = Math.round(end - start);
+      };
+      img.onerror = () => {
+        document.getElementById(timeId).textContent = "Error loading image";
+      };
+    }
+    measureLoadTime('cloudfront-img', 'cloudfront-time');
+    measureLoadTime('local-img', 'local-time');
+  </script>
+</body>
+</html> 
