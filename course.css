@@ -166,7 +166,7 @@ header.fixed {
 
 .schedule-table th,
 .schedule-table td {
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     vertical-align: top;
@@ -251,6 +251,13 @@ header.fixed {
 
 .back-arrow:hover {
     background: rgba(255, 255, 255, 1);
+}
+
+.back-arrow svg {
+    display: block;
+    margin: auto;
+    width: 20px;
+    height: 20px;
 }
 
 @media (max-width: 768px) {
