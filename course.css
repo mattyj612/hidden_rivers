@@ -31,7 +31,7 @@ header.fixed {
 }
 
 .logo {
-    width: 200px;
+    width: 210px;
     height: auto;
     display: block;
 }
@@ -184,13 +184,13 @@ header.fixed {
     font-family: 'Newsreader', serif;
 }
 
-.expectations-list {
+.syllabus-list {
     list-style: none;
     padding: 0;
     margin: 0 0 1.5rem 1rem;
 }
 
-.expectations-list li {
+.syllabus-list li {
     position: relative;
     padding: 0.25rem 0 0.25rem 1.25rem;
     margin: 0;
@@ -200,7 +200,7 @@ header.fixed {
     color: black;
 }
 
-.expectations-list li::before {
+.syllabus-list li::before {
     content: "●";
     position: absolute;
     left: 0;
@@ -296,7 +296,7 @@ header.fixed {
     }
 
     .syllabus-section p,
-    .expectations-list li {
+    .syllabus-list li {
         font-size: 1rem;
     }
 }

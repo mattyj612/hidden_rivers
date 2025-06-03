@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Norms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="fixed-background"></div>
+    <div class="back-arrow-container">
+        <a href="course.html" class="back-arrow" aria-label="Back to course page">
+          <span class="arrow-unicode">←</span>
+          <span class="arrow-svg" style="display:none;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block; margin:auto;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 16L7 10L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+    </div>
+    <div class="sticky-header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Hidden Rivers Logo" class="logo">
+        </div>
+        <div class="title-container">
+            <h1>Hidden Rivers Course</h1>
+            <h2>Summer 2025 Pilot</h2>
+        </div>
+    </div>
+    <div class="syllabus-container">
+        <div class="syllabus-box">
+            <section class="syllabus-section">
+                <h3>Norms of Discussion and Engagement</h3>
+                <p>Any history seminar deals with big, contentious questions, and uses the past as a way to explore the fault lines in our current politics & culture. 
+                    Over our five weeks we will discuss themes of colonization, racial exclusion, class conflict, technological progress, gentrification, environmental activism, housing policy, gender and sexual identity, and more.
+                </p><br>
+                <p>
+                    These hot-button topics can be challenging and vulnerable to discuss, and often come laden with assumptions about the views of our ideological opponents. Our goal in this seminar is to shed those assumptions and begin from a place of mutual good faith. 
+                    In this group, we speak earnestly and sincerely, and assume the same of everyone else. Personal ad hominem attacks or derogatory remarks will not be tolerated. This discussion is also premised on the norm of equal participation: everyone who wants to contribute should have the opportunity to speak. No single voice or viewpoint should dominate the conversation.
+                </p><br>      
+                <p>              
+                    If anyone is engaging in the course in a way that doesn't align with these norms, we will initiate a conversation about how they can better participate. If we see repeated instances of this behavior, we reserve the right to pull people from the course entirely.
+                </p>
+            </section>
+
+            <section class="syllabus-section">
+                <h3>Committments</h3>
+                <p>
+                    <strong>Your commitment to Hidden Rivers:</strong>
+                </p>
+                <ul class="syllabus-list">
+                    <li>Preparing for each session by doing all the readings to the best of your ability</li>
+                    <li>Committing to attending sessions, barring any unexpected or unforeseen circumstances</li>
+                    <li>Engaging with the material — you will get out only what you put in</li>
+                    <li>Being earnestly open-minded to new ideas and perspectives</li>
+                    <li>Helping create a welcoming, amicable, open space and making an effort to engage directly with your peers in the class</li>
+                    <li>Respecting our guest speakers and making them feel welcomed and valued</li>
+                </ul>
+                <p>
+                    <strong>Hidden Rivers' commitment to you:</strong>
+                </p>
+                <ul class="syllabus-list">
+                    <li>Thoroughly preparing for every class session</li>
+                    <li>Distributing readings in advance</li>
+                    <li>Clearly communicating expectations at every stage</li>
+                    <li>Working with you to ensure you can participate to the best of your ability and get what you are seeking out of the course</li>
+                    <li>Creating a culture where you are listened to, respected, and taken seriously</li>
+                    <li>Being open to your feedback and suggestions. This is a pilot, and we want to get this right.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="sticky-footer">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Hidden Rivers Logo" class="logo">
+        </div>
+        <div class="title-container">
+            <h1>Hidden Rivers Course</h1>
+            <h2>Summer 2025 Pilot</h2>
+        </div>
+    </div>
+    <script>
+      // OS-specific arrow: Unicode for Mac, SVG for Windows
+      document.addEventListener('DOMContentLoaded', function() {
+        var isWindows = navigator.platform.indexOf('Win') > -1;
+        document.querySelector('.arrow-unicode').style.display = isWindows ? 'none' : 'inline';
+        document.querySelector('.arrow-svg').style.display = isWindows ? 'inline' : 'none';
+      });
+    </script>
+</body>
+</html> 
