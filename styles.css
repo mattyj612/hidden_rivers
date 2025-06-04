@@ -19,7 +19,7 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   min-height: 400px;
   background: url('images/banner2.jpg') top center/cover no-repeat;
   display: flex;
@@ -31,7 +31,7 @@ body {
 .banner-text {
   position: absolute;
   color: white;
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 300;
   line-height: 1.5;
   text-shadow: 0 4px 16px rgba(0,0,0,0.5);
@@ -52,17 +52,19 @@ body {
   text-align: center;
   padding-top: 10rem;
 }
+
 .mission-section {
   width: 100vw;
-  background: linear-gradient(120deg, #F5FAFE 60%, #e6f4ea 100%);
-  padding: 2rem 0 2rem 0;
+  background: #F5FAFE;
+  /* background: linear-gradient(120deg, #F5FAFE 60%, #e6f4ea 100%); */
+  padding: 3rem 0 3rem 0;
   margin: 0;
 }
 .mission {
   margin: 0 auto;
   max-width: 100vw;
   text-align: center;
-  padding: 0 2rem;
+  padding: 0 12rem;
   background: none;
   border-radius: 0;
   box-shadow: none;
@@ -94,10 +96,9 @@ body {
   display: block;
 }
 .offerings-section {
-  background: #fff;
+  background: #F5FAFE;
   padding: 2rem 3rem 2rem 3rem;
 }
-
 
 .offerings {
   display: flex;
@@ -251,7 +252,7 @@ body {
   }
   .mission {
     font-size: 1rem;
-    padding: 1.2rem 0.7rem;
+    padding: 1.2rem 3rem;
   }
   .mission-section {
     padding: 0.5rem 0 0.5rem 0;
@@ -335,4 +336,12 @@ body {
 }
 .email-message.error {
   color: #b30000;
-} 
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid var(--green-dark);
+  border-radius: 10px;
+  margin: 3em auto;
+  max-width: 80%;
+}
