@@ -207,6 +207,11 @@ header.fixed {
     color: var(--green-dark);
     font-size: 1em;
 }
+.button-area {
+    text-align: center; 
+    margin-top: 2rem; 
+    margin-bottom:2rem;
+}
 
 .apple-button {
     background: var(--blue-jays);
