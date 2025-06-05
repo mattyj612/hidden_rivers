@@ -62,9 +62,9 @@ body {
 }
 .mission {
   margin: 0 auto;
-  max-width: 100vw;
+  max-width: 80vw;
   text-align: center;
-  padding: 0 12rem;
+  padding: 0 1rem;
   background: none;
   border-radius: 0;
   box-shadow: none;
@@ -97,7 +97,7 @@ body {
 }
 .offerings-section {
   background: #F5FAFE;
-  padding: 2rem 3rem 2rem 3rem;
+  padding: 1rem 3rem 1rem 3rem;
 }
 
 .offerings {
@@ -252,9 +252,10 @@ body {
   }
   .mission {
     font-size: 1rem;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 0rem;
   }
   .mission-section {
+    max-width: 100vw;
     padding: 0.5rem 0 0.5rem 0;
   }
   .email-capture input[type="email"] {
