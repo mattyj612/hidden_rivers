@@ -26,7 +26,7 @@ Key Commands:
 ssh -i ~/Downloads/capture-email.pem ec2-user@44.211.251.34
 
 # Download emails.txt to your local machine
-scp -i ~/Downloads/capture-email.pem ec2-user@44.211.251.34:~/hidden_rivers/emails.txt .
+scp -i /Users/matthewjordan/Documents/capture-email.pem ec2-user@44.211.251.34:~/hidden_rivers/emails.txt .
 
 # Pull latest backend code from GitHub (on EC2)
 cd ~/hidden_rivers
