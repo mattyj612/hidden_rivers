@@ -346,23 +346,3 @@ hr {
   margin: 3em auto;
   max-width: 80%;
 }
-
-.substack-embed-wrapper {
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0.5rem;
-}
-
-.substack-embed-wrapper iframe {
-  border: 2px solid #111 !important;
-  border-radius: 0 !important;
-  background: #fff !important;
-  width: 100% !important;
-  max-width: 500px;
-  min-width: 250px;
-  height: 60px !important; /* Adjust height as needed */
-  font-family: 'Avenir', sans-serif;
-}
