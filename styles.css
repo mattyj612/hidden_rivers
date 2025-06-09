@@ -346,3 +346,13 @@ hr {
   margin: 3em auto;
   max-width: 80%;
 }
+
+.emdash {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  border-bottom: 1px solid #111;
+  margin: 0 0em;
+  /* height: 0.5em; Optional: helps with vertical alignment */
+  content: "";
+}

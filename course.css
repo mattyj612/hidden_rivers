@@ -342,3 +342,13 @@ footer.class-footer .title-container {
     border-radius: 0px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 } 
+
+.emdash {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    border-bottom: 1px solid #111;
+    margin: 0 0em;
+    /* height: 0.5em; Optional: helps with vertical alignment */
+    content: "";
+  }
