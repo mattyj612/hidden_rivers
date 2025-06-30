@@ -314,7 +314,7 @@ hr {
 }
 
 .registration-overlay::after {
-  content: "Registration closed";
+  content: "Registration full";
   position: absolute;
   top: 50%;
   left: 50%;
