@@ -351,4 +351,22 @@ footer.class-footer .title-container {
     margin: 0 0em;
     /* height: 0.5em; Optional: helps with vertical alignment */
     content: "";
-  }
+    font-style: normal;
+}
+
+.registration-closed {
+    background-color: #f8f9fa;
+    border: 2px solid var(--green-mid);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0rem 0;
+    text-align: center;
+}
+
+.registration-closed p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--green-mid);
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
