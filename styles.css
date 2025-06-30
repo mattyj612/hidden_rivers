@@ -158,25 +158,9 @@ body {
   font-family: 'Avenir', sans-serif;
 }
 
-
-
-/* Center line for alignment testing
-.center-line {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100vh;
-  background: red;
-  z-index: 9999;
-  transform: translateX(-50%);
-} */
-
 @media (max-width: 600px) {
   .banner-text,
   .mission,
-  .offerings-section,
-  .offerings,
   .email-capture-section,
   .footer {
     padding-left: 1rem;
@@ -205,8 +189,29 @@ body {
     flex-shrink: 0;
   }
 }
-@media (max-width: 500px) {
-  /* Removed flex-direction: column and width: 100% for .email-capture-form and its children to keep them side-by-side on mobile */
+
+@media (max-width: 400px) {
+  .email-capture-form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .email-capture-form .email-capture-input {
+    width: 100%;
+    flex: none;
+    margin-right: 0;
+    height: 40px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+  }
+  .email-capture-form .email-capture-button {
+    width: 100%;
+    flex: none;
+    margin-left: 0;
+    justify-content: center;
+    height: 40px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+  }
 }
 
 .footer {
@@ -393,8 +398,10 @@ hr {
     justify-content: center;
   }
   .offering-box {
-    width: 85%;
-    height: 280px;
+    width: 80vw;
+    aspect-ratio: auto;
+    height: auto;
+    min-height: auto;
     margin: 0 auto;
   }
 }
